@@ -65,3 +65,25 @@ exports.getLocalColetaByNome = async (req, res) => {
         });
     }
 };
+
+// Update local de coleta pelo ID
+exports.updateLocalColetaById = async (req, res) => {
+    try {
+        const local = await LocalColeta.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if (!local) {
+            return res.status(404).send({
+                message: "Local de coleta não encontrado com o id " + req.params.id
+            });
+        }
+        res.send(local);
+    } catch (err) {
+        if (err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "Local de coleta não encontrado com o id " + req.params.id
+            });
+        }
+        return res.status(500).send({
+            message: "Erro ao atualizar o local de coleta com o id " + req.params.id
+        });
+    }
+};
