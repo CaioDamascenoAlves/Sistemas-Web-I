@@ -16,3 +16,14 @@ exports.createDoacao = async (req, res) => {
         });
     }
 };
+
+exports.getAllDoacoes = async (req, res) => {
+    try {
+        const doacoes = await Doacao.find();
+        res.send(doacoes);
+    } catch (err) {
+        res.status(500).send({
+            message: err.message || "Ocorreu um erro ao recuperar as doações"
+        });
+    }
+};
