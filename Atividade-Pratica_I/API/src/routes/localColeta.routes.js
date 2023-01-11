@@ -12,6 +12,6 @@ router.get('/local_coleta', localColetaController.getAllLocaisColeta);
 router.get('/local_coleta/:id', localColetaController.getLocalColetaById);
 
 // ==> Rota responsável por Buscar um determinado Locais de Coleta por ID: (GET): localhost:3000/api/local_coleta/:nome
-router.get('/local_coleta/:nome', localColetaController.getLocalColetaByNome);
+router.get('/local_coleta/nome/:nome', localColetaController.getLocalColetaByNome);
 
 module.exports = router;
