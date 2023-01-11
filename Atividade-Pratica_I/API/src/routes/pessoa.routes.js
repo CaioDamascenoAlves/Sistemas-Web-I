@@ -11,4 +11,7 @@ router.get('/pessoa', pessoaController.getAllPessoas);
 // ==> Rota responsável por Buscar uma determinada Pessoa por id: (GET): localhost:3000/api/pessoa/:id
 router.get('/pessoa/:id', pessoaController.getPessoaById);
 
+// ==> Rota responsável por Atualizar uma determinada Pessoa por id: (PUT): localhost:3000/api/pessoa/:id
+router.put('/pessoa/:id', pessoaController.updatePessoaById);
+
 module.exports = router;

@@ -53,7 +53,7 @@ exports.getPessoaById = async (req, res) => {
     }
 };
 
-exports.updateById = async (req, res) => {
+exports.updatePessoaById = async (req, res) => {
     try {
         const pessoa = await Pessoa.findByIdAndUpdate(req.params.id, req.body, { new: true });
         if(!pessoa) {
