@@ -1,10 +1,12 @@
-# Sistemas-Web-I
-Praticas da disciplina Sistema Web I | UFOP
+# API de Doação de Sangue
 
-Uma API de doação de sangue!
+## Essa é uma API desenvolvida para gerenciamento de doações de sangue, ela foi construída utilizando Node.js, MongoDB e Express.
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+###Funcionalidades:
+    Cadastro de pessoas
+    Cadastro de tipos sanguíneos
+    Cadastro de locais de coleta
+    Cadastro de doações
+    Consulta de pessoas, tipos sanguíneos, locais de coleta e doações
+    Alteração de pessoas, tipos sanguíneos, locais de coleta e doações
+    Exclusão de pessoas, tipos sanguíneos, locais de coleta e doações
