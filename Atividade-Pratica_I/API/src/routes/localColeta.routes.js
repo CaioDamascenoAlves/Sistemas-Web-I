@@ -14,7 +14,10 @@ router.get('/local_coleta/:id', localColetaController.getLocalColetaById);
 // ==> Rota responsável por Buscar um determinado Locais de Coleta por Nome: (GET): localhost:3000/api/local_coleta/nome/:nome
 router.get('/local_coleta/nome/:nome', localColetaController.getLocalColetaByNome);
 
-// ==> Rota responsável por Buscar um determinado Locais de Coleta por Nome: (PUT): localhost:3000/api/local_coleta/:id
+// ==> Rota responsável por Atualizar um determinado Locais de Coleta por ID: (PUT): localhost:3000/api/local_coleta/:id
 router.put('/local_coleta/:id', localColetaController.updateLocalColetaById);
+
+// ==> Rota responsável por Deletar um determinado Locais de Coleta por ID: (PUT): localhost:3000/api/local_coleta/:id
+router.delete('/local_coleta/:id', localColetaController.deleteLocalColetaById);
 
 module.exports = router;

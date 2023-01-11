@@ -87,3 +87,25 @@ exports.updateLocalColetaById = async (req, res) => {
         });
     }
 };
+
+exports.deleteLocalColetaById = async (req, res) => {
+    try {
+        const local = await LocalColeta.findById(req.params.id);
+        if (!local) {
+            return res.status(404).send({
+                message: "Local de coleta não encontrado com o id " + req.params.id
+            });
+        }
+        await local.remove();
+        res.send({ message: "Local de coleta deletado com sucesso!" });
+    } catch (err) {
+        if (err.kind === 'ObjectId' || err.name === 'NotFound') {
+            return res.status(404).send({
+                message: "Local de coleta não encontrado com o id " + req.params.id
+            });
+        }
+        return res.status(500).send({
+            message: "Não foi possível deletar o local de coleta com o id " + req.params.id
+        });
+    }
+};
