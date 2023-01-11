@@ -27,3 +27,24 @@ exports.getAllDoacoes = async (req, res) => {
         });
     }
 };
+
+exports.getDoacaoById = async (req, res) => {
+    try {
+        const doacao = await Doacao.findById(req.params.id).populate('pessoa').populate('localColeta');
+        if (!doacao) {
+            return res.status(404).send({
+                message: "Doação não encontrada com o id " + req.params.id
+            });
+        }
+        res.send(doacao);
+    } catch (err) {
+        if (err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "Doação não encontrada com o id " + req.params.id
+            });
+        }
+        return res.status(500).send({
+            message: "Erro ao recuperar a doação com o id " + req.params.id
+        });
+    }
+};
