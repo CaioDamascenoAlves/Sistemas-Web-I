@@ -49,3 +49,19 @@ exports.getLocalColetaById = async (req, res) => {
         });
     }
 };
+
+exports.getLocalColetaByNome = async (req, res) => {
+    try {
+        const local = await LocalColeta.findOne({nome: req.params.nome});
+        if(!local) {
+            return res.status(404).send({
+                message: "Local de coleta não encontrado com o nome " + req.params.nome
+            });
+        }
+        res.send(local);
+    } catch (err) {
+        return res.status(500).send({
+            message: "Erro ao recuperar o local de coleta com o nome " + req.params.nome
+        });
+    }
+};
