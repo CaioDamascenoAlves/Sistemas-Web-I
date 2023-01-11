@@ -53,6 +53,22 @@ exports.getPessoaById = async (req, res) => {
     }
 };
 
+exports.getPessoaByNome = async (req, res) => {
+    try {
+        const pessoa = await Pessoa.findOne({nome: req.params.nome});
+        if(!pessoa) {
+            return res.status(404).send({
+                message: "Pessoa não encontrada com o nome " + req.params.nome
+            });
+        }
+        res.send(pessoa);
+    } catch (err) {
+        return res.status(500).send({
+            message: "Erro ao recuperar a pessoa com o nome " + req.params.nome
+        });
+    }
+};
+
 exports.updatePessoaById = async (req, res) => {
     try {
         const pessoa = await Pessoa.findByIdAndUpdate(req.params.id, req.body, { new: true });
