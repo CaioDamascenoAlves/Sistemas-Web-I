@@ -53,6 +53,23 @@ exports.getPessoaById = async (req, res) => {
     }
 };
 
-exports.updatePessoaById = async (req, res, next) => {
-	
-}
+exports.updateById = async (req, res) => {
+    try {
+        const pessoa = await Pessoa.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        if(!pessoa) {
+            return res.status(404).send({
+                message: "Pessoa não encontrada com o id " + req.params.id
+            });
+        }
+        res.send(pessoa);
+    } catch (err) {
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "Pessoa não encontrada com o id " + req.params.id
+            });                
+        }
+        return res.status(500).send({
+            message: "Erro ao atualizar a pessoa com o id " + req.params.id
+        });
+    }
+};
