@@ -14,4 +14,7 @@ router.get('/pessoa/:id', pessoaController.getPessoaById);
 // ==> Rota responsável por Atualizar uma determinada Pessoa por id: (PUT): localhost:3000/api/pessoa/:id
 router.put('/pessoa/:id', pessoaController.updatePessoaById);
 
+// ==> Rota responsável por Deletar uma determinada Pessoa por id: (DELETE): localhost:3000/api/pessoa/:id
+
+router.delete('/pessoa/:id', pessoaController.deletePessoaById);
 module.exports = router;

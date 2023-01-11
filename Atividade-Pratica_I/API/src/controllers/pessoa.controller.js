@@ -73,3 +73,24 @@ exports.updatePessoaById = async (req, res) => {
         });
     }
 };
+
+exports.deletePessoaById = async (req, res) => {
+    try {
+        const pessoa = await Pessoa.findByIdAndRemove(req.params.id);
+        if(!pessoa) {
+            return res.status(404).send({
+                message: "Pessoa não encontrada com o id " + req.params.id
+            });
+        }
+        res.send({ message: "Pessoa deletada com sucesso!" });
+    } catch (err) {
+        if(err.kind === 'ObjectId' || err.name === 'NotFound') {
+            return res.status(404).send({
+                message: "Pessoa não encontrada com o id " + req.params.id
+            });                
+        }
+        return res.status(500).send({
+            message: "Não foi possível deletar a pessoa com o id " + req.params.id
+        });
+    }
+};
