@@ -29,8 +29,10 @@ const PessoaSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'TipoSanguineo'
   },
-  timestamp: true,
-  collerction: 'pessoas'
+  
+},{
+	timestamps: true,
+  	collerction: 'pessoas',
 });
 
 const Pessoa = mongoose.model('Pessoa', PessoaSchema);
