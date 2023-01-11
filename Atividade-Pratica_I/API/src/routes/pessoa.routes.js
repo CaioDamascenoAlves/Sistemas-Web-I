@@ -15,6 +15,6 @@ router.get('/pessoa/:id', pessoaController.getPessoaById);
 router.put('/pessoa/:id', pessoaController.updatePessoaById);
 
 // ==> Rota responsável por Deletar uma determinada Pessoa por id: (DELETE): localhost:3000/api/pessoa/:id
-
 router.delete('/pessoa/:id', pessoaController.deletePessoaById);
+
 module.exports = router;

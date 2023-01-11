@@ -32,7 +32,7 @@ const PessoaSchema = new Schema({
   
 },{
 	timestamps: true,
-  	collerction: 'pessoas',
+  	collection: 'pessoas',
 });
 
 const Pessoa = mongoose.model('Pessoa', PessoaSchema);
