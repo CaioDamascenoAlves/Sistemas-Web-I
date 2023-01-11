@@ -9,6 +9,7 @@ const app = express();
 const index = require("./routes/index");
 const pessoaRoutes = require("./routes/pessoa.routes");
 const tipoSanguineoRoutes = require("./routes/tipoSanguineo.routes");
+const localColetaRoutes = require("./routes/localColeta.routes");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -22,5 +23,6 @@ app.set("mongoose connection", mongooseConnection);
 app.use(index);
 app.use("/api/", pessoaRoutes);
 app.use("/api/", tipoSanguineoRoutes);
+app.use("/api/", localColetaRoutes);
 
 module.exports = app;
