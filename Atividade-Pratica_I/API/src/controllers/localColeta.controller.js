@@ -17,3 +17,14 @@ exports.createLocalColeta = async (req, res) => {
         });
     }
 };
+
+exports.getAllLocaisColeta = async (req, res) => {
+    try {
+        const locais = await LocalColeta.find();
+        res.send(locais);
+    } catch (err) {
+        res.status(500).send({
+            message: err.message || "Erro ao recuperar os locais de coleta."
+        });
+    }
+};
