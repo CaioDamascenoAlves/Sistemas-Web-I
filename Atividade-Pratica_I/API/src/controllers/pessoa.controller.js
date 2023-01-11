@@ -21,7 +21,7 @@ exports.createPessoa = async (req, res) => {
     }
 };
 
-exports.getTodasPessoas = async (req, res) => {
+exports.getAllPessoas = async (req, res) => {
 	try{
 		const pessoas = await Pessoa.find();
 		res.send(pessoas);
