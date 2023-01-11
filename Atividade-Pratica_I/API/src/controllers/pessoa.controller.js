@@ -20,3 +20,14 @@ exports.createPessoa = async (req, res) => {
         });
     }
 };
+
+exports.getTodasPessoas = async (req, res) => {
+	try{
+		const pessoas = await Pessoa.find();
+		res.send(pessoas);
+	} catch (err){
+		res.status(500).send({
+			message: err.message || "Erro ao recuperar as pessoas"
+		});
+	}
+};
