@@ -70,3 +70,24 @@ exports.updateDoacaoById = async (req, res) => {
         });
     }
 };
+
+exports.deleteDoacaoById = async (req, res) => {
+    try {
+        const doacao = await Doacao.findByIdAndRemove(req.params.id);
+        if (!doacao) {
+            return res.status(404).send({
+                message: "Doação não encontrada com o id " + req.params.id
+            });
+        }
+        res.send({ message: "Doação excluída com sucesso!" });
+    } catch (err) {
+        if (err.kind === 'ObjectId' || err.name === 'NotFound') {
+            return res.status(404).send({
+                message: "Doação não encontrada com o id " + req.params.id
+            });
+        }
+        return res.status(500).send({
+            message: "Não foi possível excluir a doação com o id " + req.params.id
+        });
+    }
+};
