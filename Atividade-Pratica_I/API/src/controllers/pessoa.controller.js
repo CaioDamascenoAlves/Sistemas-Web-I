@@ -31,3 +31,24 @@ exports.getAllPessoas = async (req, res) => {
 		});
 	}
 };
+
+exports.getpessoaByid = async (req, res) => {
+	try {
+		const pessoa = await Pessoa.findById(req.params.id);
+		if(!pessoa) {
+			return res.status(404).send({
+				message: "Pessoa não encontrada com o id: " + req.params.id
+			});
+		}
+		res.send(pessoa);
+	} catch (err) {
+        if(err.kind === 'ObjectId') {
+            return res.status(404).send({
+                message: "Pessoa não encontrada com o id " + req.params.id
+            });                
+        }
+        return res.status(500).send({
+            message: "Erro ao recuperar a pessoa com o id " + req.params.id
+        });
+    }
+};
