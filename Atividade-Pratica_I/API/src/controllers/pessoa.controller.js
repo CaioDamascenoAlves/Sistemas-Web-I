@@ -52,3 +52,7 @@ exports.getPessoaById = async (req, res) => {
         });
     }
 };
+
+exports.updatePessoaById = async (req, res, next) => {
+	
+}
