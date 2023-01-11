@@ -2,7 +2,7 @@
 
 ## Essa é uma API desenvolvida para gerenciamento de doações de sangue, ela foi construída utilizando Node.js, MongoDB e Express.
 
-###Funcionalidades:
+### Funcionalidades:
     Cadastro de pessoas
     Cadastro de tipos sanguíneos
     Cadastro de locais de coleta
