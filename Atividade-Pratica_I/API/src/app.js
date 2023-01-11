@@ -8,6 +8,7 @@ const app = express();
 // ==> Rotas da API:
 const index = require("./routes/index");
 const pessoaRoutes = require("./routes/pessoa.routes");
+const tipoSanguineoRoutes = require("./routes/tipoSanguineo.routes");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -20,5 +21,6 @@ app.set("mongoose connection", mongooseConnection);
 
 app.use(index);
 app.use("/api/", pessoaRoutes);
+app.use("/api/", tipoSanguineoRoutes);
 
 module.exports = app;
