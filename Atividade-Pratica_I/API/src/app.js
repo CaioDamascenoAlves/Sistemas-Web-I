@@ -19,6 +19,6 @@ app.use(cors());
 app.set("mongoose connection", mongooseConnection);
 
 app.use(index);
-app.use("/api/v1/", pessoaRoutes);
+app.use("/api/", pessoaRoutes);
 
 module.exports = app;
