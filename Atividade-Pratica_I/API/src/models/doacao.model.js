@@ -5,12 +5,10 @@ const DoacaoSchema = new Schema({
     pessoa: {
         type: Schema.Types.ObjectId,
         ref: 'Pessoa',
-        required: true
     },
     localColeta: {
         type: Schema.Types.ObjectId,
         ref: 'LocalColeta',
-        required: true
     },
     data: {
         type: Date,

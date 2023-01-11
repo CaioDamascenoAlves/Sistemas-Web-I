@@ -10,6 +10,7 @@ const index = require("./routes/index");
 const pessoaRoutes = require("./routes/pessoa.routes");
 const tipoSanguineoRoutes = require("./routes/tipoSanguineo.routes");
 const localColetaRoutes = require("./routes/localColeta.routes");
+const doacaoRoutes = require("./routes/doacao.routes");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -24,5 +25,6 @@ app.use(index);
 app.use("/api/", pessoaRoutes);
 app.use("/api/", tipoSanguineoRoutes);
 app.use("/api/", localColetaRoutes);
+app.use("/api/", doacaoRoutes);
 
 module.exports = app;
