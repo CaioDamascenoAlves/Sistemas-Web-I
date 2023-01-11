@@ -32,7 +32,7 @@ exports.getAllPessoas = async (req, res) => {
 	}
 };
 
-exports.getpessoaByid = async (req, res) => {
+exports.getPessoaById = async (req, res) => {
 	try {
 		const pessoa = await Pessoa.findById(req.params.id);
 		if(!pessoa) {
