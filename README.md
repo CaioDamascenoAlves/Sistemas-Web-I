@@ -1,6 +1,7 @@
 # Sistemas-Web-I
 Praticas da disciplina Sistema Web I | UFOP
-API de doação de sangue!
+
+Uma API de doação de sangue!
 
 <!-- GETTING STARTED -->
 ## Getting Started
