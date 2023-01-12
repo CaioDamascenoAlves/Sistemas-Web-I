@@ -16,3 +16,4 @@
 Para utilizar essa API, é necessário ter o Node.js e o MongoDB instalados em sua máquina.
 
 Clone o repositório e execute o seguinte comando para instalar as dependências:
+*npm install*
