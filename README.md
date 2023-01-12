@@ -19,3 +19,15 @@ Clone o repositório e execute o seguinte comando para instalar as dependências
 ```
 npm install
 ```
+Inicie o MongoDB em sua máquina. Em seguida, execute o seguinte comando para iniciar a API:
+```
+npm start
+```
+A API estará disponível em http://localhost:3000/.
+
+### Comandos úteis
+
+#### Aqui estão alguns comandos úteis para gerenciar a API:
+    Iniciar a API: npm start
+    Executar testes: npm test
+    Gerar relatório de cobertura de testes: npm run test:cover
