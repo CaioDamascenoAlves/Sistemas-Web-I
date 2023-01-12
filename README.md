@@ -10,3 +10,9 @@
     Consulta de pessoas, tipos sanguíneos, locais de coleta e doações
     Alteração de pessoas, tipos sanguíneos, locais de coleta e doações
     Exclusão de pessoas, tipos sanguíneos, locais de coleta e doações
+    
+### Como começar
+
+Para utilizar essa API, é necessário ter o Node.js e o MongoDB instalados em sua máquina.
+
+Clone o repositório e execute o seguinte comando para instalar as dependências:
