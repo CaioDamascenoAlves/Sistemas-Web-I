@@ -11,6 +11,7 @@ const pessoaRoutes = require("./routes/pessoa.routes");
 const tipoSanguineoRoutes = require("./routes/tipoSanguineo.routes");
 const localColetaRoutes = require("./routes/localColeta.routes");
 const doacaoRoutes = require("./routes/doacao.routes");
+const ClassePessoaRoutes = require("./routes/CLASS_Pessoa.routes");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -23,6 +24,7 @@ app.set("mongoose connection", mongooseConnection);
 
 app.use(index);
 app.use("/api/", pessoaRoutes);
+app.use("/api/", ClassePessoaRoutes);
 app.use("/api/", tipoSanguineoRoutes);
 app.use("/api/", localColetaRoutes);
 app.use("/api/", doacaoRoutes);

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // ==> Importar o arquivo: 'db.config.js'
 const database = require('./db.config'); // ==> aqui é conexão local: MongoDB
-
+mongoose.set('strictQuery', true);
 mongoose.Promise = global.Promise;
 
 // ==> Conexão com a Base de Dados:
